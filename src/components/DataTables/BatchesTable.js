@@ -35,65 +35,26 @@ import {
 const data = [
   {
     id: "m5gr84i9",
-    firstName: "Talha",
-    lastName: "Malik",
-    profilePicture: "",
-    education: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    profilePic:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHVzZXIlMjBQcm9maWxlJTIwaW1nfGVufDB8fDB8fHww",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
+    batchName: "Batch A",
+    status: "active",
+    noOfStudentsture: "",
+    courses: "Web Development",
+    trainers: "Bilal Raza",
+    noOfStudents: 25,
   },
   {
-    firstName: "Talha",
-    lastName: "Malik",
-    education: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    profilePic:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHVzZXIlMjBQcm9maWxlJTIwaW1nfGVufDB8fDB8fHww",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
+    batchName: "Batch B",
+    status: "active",
+    courses: "App Development",
+    trainers: "Sir Ghous Ahmed",
+    noOfStudents: 20,
   },
   {
-    firstName: "Talha",
-    lastName: "Malik",
-    education: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    profilePic:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHVzZXIlMjBQcm9maWxlJTIwaW1nfGVufDB8fDB8fHww",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
-  },
-  {
-    firstName: "Talha",
-    lastName: "Malik",
-    education: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    profilePic:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHVzZXIlMjBQcm9maWxlJTIwaW1nfGVufDB8fDB8fHww",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
-  },
-  {
-    firstName: "Talha",
-    lastName: "Malik",
-    education: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    profilePic:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHVzZXIlMjBQcm9maWxlJTIwaW1nfGVufDB8fDB8fHww",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
+    batchName: "Batch C",
+    status: "active",
+    courses: "Web And App Development",
+    trainers: "Sir ShahzadIqbal",
+    noOfStudents: 50,
   },
 ];
 
@@ -121,78 +82,48 @@ export const columns = [
     enableHiding: false,
   },
   {
-    accessorKey: "lastName",
-    header: "Last Name",
+    accessorKey: "status",
+    header: "Status",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("lastName")}</div>
+      <div className="capitalize">{row.getValue("status")}</div>
     ),
   },
   {
-    accessorKey: "firstName",
-    header: "First Name",
+    accessorKey: "batchName",
+    header: "Batch Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("firstName")}</div>
+      <div className="capitalize">{row.getValue("batchName")}</div>
     ),
   },
   {
-    accessorKey: "education",
+    accessorKey: "courses",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Education
+          Courses
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
   },
   {
-    accessorKey: "cnic",
-    header: "Cnic",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("cnic")}</div>,
-  },
-  {
-    accessorKey: "email",
-    header: "Email",
+    accessorKey: "trainers",
+    header: "Trainers",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("email")}</div>
+      <div className="capitalize">{row.getValue("trainers")}</div>
     ),
-  },
-  {
-    accessorKey: "profilePic",
-    header: "Profile Picture",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <img
-          className="w-12 h-12 rounded-full"
-          src={row.getValue("profilePic")}
-          alt="profilePic"
-        />
-      </div>
-    ),
-  },
-  {
-    accessorKey: "address",
-    header: "Address",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("address")}</div>
-    ),
-  },
-  {
-    accessorKey: "gender",
-    header: "Gender",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("gender")}</div>
-    ),
-  },
-  {
-    accessorKey: "role",
-    header: "Role",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("role")}</div>,
   },
 
+  {
+    accessorKey: "noOfStudents",
+    header: "No of Students",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("noOfStudents")}</div>
+    ),
+  },
   {
     id: "actions",
     enableHiding: false,
@@ -252,7 +183,7 @@ export default function DataTableDemo() {
   return (
     <div className="w-full py-5">
       <div className="w-full text-3xl font-bold">
-        <h1>Trainers</h1>
+        <h1>Batches</h1>
       </div>
       <div className="flex items-center py-4">
         <Input
