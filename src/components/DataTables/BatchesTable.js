@@ -182,9 +182,16 @@ export default function DataTableDemo() {
 
   return (
     <div className="w-full py-5">
-      <div className="w-full text-3xl font-bold">
+      <div className="w-full text-3xl font-bold flex justify-around">
         <h1>Batches</h1>
+        <div className="w-full flex justify-end">
+          {" "}
+          <Button variant="outline" className="ml-auto">
+            Add Batch
+          </Button>
+        </div>
       </div>
+
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
@@ -194,6 +201,7 @@ export default function DataTableDemo() {
           }
           className="max-w-sm"
         />
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">

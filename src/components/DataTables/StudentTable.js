@@ -251,8 +251,14 @@ export default function DataTableDemo() {
 
   return (
     <div className="w-full py-5">
-      <div className="w-full text-3xl font-bold">
+      <div className="w-full flex justify-around text-3xl font-bold">
         <h1>Students</h1>
+        <div className="w-full flex justify-end">
+          {" "}
+          <Button variant="outline" className="ml-auto">
+            Add Students
+          </Button>
+        </div>
       </div>
       <div className="flex items-center py-4">
         <Input

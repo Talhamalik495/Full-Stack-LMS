@@ -34,55 +34,22 @@ import {
 
 const data = [
   {
-    id: "m5gr84i9",
-    name: "Talha",
-    lastName: "Malik",
-    eduction: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
+    status: "active",
+    courses: "Web Development",
+    description: "Make Student Complete Web and App developer from Scratch",
+    duration: "8 month",
   },
   {
-    name: "Talha",
-    lastName: "Malik",
-    eduction: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
+    status: "active",
+    courses: "App Development",
+    description: "Make Student Complete Web and App developer from Scratch",
+    duration: "8 month",
   },
   {
-    name: "Talha",
-    lastName: "Malik",
-    eduction: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
-  },
-  {
-    name: "Talha",
-    lastName: "Malik",
-    eduction: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
-  },
-  {
-    name: "Talha",
-    lastName: "Malik",
-    eduction: "Matric",
-    cnic: 82382392834724,
-    email: "ken99@yahoo.com",
-    address: "Bloch",
-    gender: "Male",
-    role: "Student",
+    status: "active",
+    courses: "Web And App Development",
+    description: "Make Student Complete Web and App developer from Scratch",
+    duration: "1 year",
   },
 ];
 
@@ -110,41 +77,48 @@ export const columns = [
     enableHiding: false,
   },
   {
-    accessorKey: "lastName",
-    header: "Last Name",
+    accessorKey: "status",
+    header: "Status",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("lastName")}</div>
+      <div className="capitalize">{row.getValue("status")}</div>
     ),
   },
+
   {
-    accessorKey: "email",
+    accessorKey: "courses",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Courses
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right"></div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
+    accessorKey: "description",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Description
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
     },
+  },
+
+  {
+    accessorKey: "noOfStudents",
+    header: "No of Students",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("noOfStudents")}</div>
+    ),
   },
   {
     id: "actions",
@@ -203,7 +177,16 @@ export default function DataTableDemo() {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full py-5">
+      <div className="w-full text-3xl font-bold">
+        <h1>Courses</h1>
+        <div className="w-full flex justify-around">
+          {" "}
+          <Button variant="outline" className="ml-auto">
+            Add Course
+          </Button>
+        </div>
+      </div>
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
