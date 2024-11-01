@@ -33,26 +33,32 @@ export default function DialogDemo() {
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="flex flex-col gap-3">
+            <Label htmlFor="name">Batch Name</Label>
+            <Input id="name" className="col-span-3" />
+          </div>
+          <div className="flex flex-col gap-3">
+            <Label htmlFor="name">Trainer</Label>
+            <Input id="name" className="col-span-3" />
+          </div>
+          <div className="flex flex-col gap-3">
             <Label htmlFor="name">Course Name</Label>
             <Input id="name" className="col-span-3" />
           </div>
           <div className="flex flex-col gap-3">
-            <Label htmlFor="name">Duration</Label>
-            <Input id="name" className="col-span-3" />
-          </div>
-          <div className="flex flex-col gap-3">
-            <Label htmlFor="name">Description</Label>
+            <Label htmlFor="name">Number Of Students</Label>
             <Input id="name" className="col-span-3" />
           </div>
           <div className="w-full">
             <Select>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="active" />
+                <SelectValue placeholder="pending" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="apple">Active</SelectItem>
-                  <SelectItem value="banana">No Active</SelectItem>
+                  <SelectItem value="apple">pending</SelectItem>
+                  <SelectItem value="banana">completed</SelectItem>
+                  <SelectItem value="apple">ongoing</SelectItem>
+                  <SelectItem value="banana">merged</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -61,7 +67,7 @@ export default function DialogDemo() {
 
         <DialogFooter>
           <Button className="w-full" type="submit">
-            Add Batch
+            Add Course
           </Button>
         </DialogFooter>
       </DialogContent>

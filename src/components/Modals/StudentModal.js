@@ -27,9 +27,9 @@ export default function DialogDemo() {
       <DialogTrigger asChild>
         <Button variant="outline">Add Student</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>Add Trainer</DialogTitle>
+          <DialogTitle>Add Student</DialogTitle>
         </DialogHeader>
         <div className="w-full grid gap-4 py-4">
           <div className="w-full  flex gap-2">

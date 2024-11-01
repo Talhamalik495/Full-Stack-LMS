@@ -27,7 +27,7 @@ export default function DialogDemo() {
       <DialogTrigger asChild>
         <Button variant="outline">Add Trainer</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
           <DialogTitle>Add Trainer</DialogTitle>
         </DialogHeader>
