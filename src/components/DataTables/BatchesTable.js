@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import BatchModal from "../Modals/BatchModal";
+
 import {
   flexRender,
   getCoreRowModel,
@@ -182,14 +184,9 @@ export default function DataTableDemo() {
 
   return (
     <div className="w-full py-5">
-      <div className="w-full text-3xl font-bold flex justify-around">
+      <div className="w-full text-3xl font-bold flex justify-between">
         <h1>Batches</h1>
-        <div className="w-full flex justify-end">
-          {" "}
-          <Button variant="outline" className="ml-auto">
-            Add Batch
-          </Button>
-        </div>
+        <BatchModal />
       </div>
 
       <div className="flex items-center py-4">
