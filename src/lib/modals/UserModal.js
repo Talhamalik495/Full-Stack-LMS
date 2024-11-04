@@ -4,14 +4,14 @@ const { Schema } = "mongoose";
 
 const userSchema = new Schema(
   {
-    fullname: { type: "string" },
-    email: { type: "string", required: true },
-    password: { type: "string" },
-    provider: { type: "string" },
-    profileImg: { type: "string" },
-    role: { type: "string", default: "user" },
-    gender: { type: "string" },
-    address: { type: "string" },
+    fullname: { type: String },
+    email: { type: String, required: true },
+    password: { type: String },
+    provider: { type: String },
+    profileImg: { type: String },
+    role: { type: String, default: "user" },
+    gender: { type: String },
+    address: { type: String },
   },
   {
     timestamps: true,
